@@ -1,0 +1,31 @@
+<header class="masthead" [style.backgroundImage]="'url('+ imgBackground +')'">
+  <div class="container px-4 px-lg-5 h-100">
+
+    <div class="row gx-2 gx-lg-2 h-100 justify-content-start text-start">
+
+      <div class="col-lg-9">
+        <h1 class="text-white font-weight-bold">{{ movieTrending.title || movieTrending.original_name }}</h1>
+      </div>
+
+      <div class="col-lg-4">
+        <p class="text-white mb-3">{{ movieTrending.overview }}</p>
+        <p class="text-white mb-5" id="imdb-rating">
+          <img src="../../../assets/logo/imdb.png" alt="ImdB">
+          {{ movieTrending.vote_average }}
+        </p>
+        <p *ngIf="movieTrending.adult == true">
+          <img src="../../../assets/logo/classificacao-indicativa-18.png" alt="Classificação Indicativa 18 Anos">
+        </p>
+
+        <button type="button" class="btn" id="button-watch">
+          <i class="fa fa-play" aria-hidden="true"></i>
+          Assista Agora
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
