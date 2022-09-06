@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { ITmdbResponse } from '../models/tmdb.model';
 
 
 @Injectable({
@@ -13,7 +14,7 @@ export class TmdbService {
     private httpClient: HttpClient
   ) { }
 
-  public Obtendotrending(): Observable<any> {
-    return this.httpClient.get(`${environment.API_URL}/trending/all/week?language=pt-BR&api_key=${environment.API_KEY}`)
+  public getTrending(): Observable<ITmdbResponse> {
+    return this.httpClient.get<ITmdbResponse>(`${environment.API_URL}/trending/all/day?language=pt-BR&api_key=${environment.API_KEY}`);
   }
 }
