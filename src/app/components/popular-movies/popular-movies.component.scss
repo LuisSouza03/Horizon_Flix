@@ -1,0 +1,29 @@
+section {
+  height: 100vh;
+  padding-top: 2.25rem;
+}
+
+#first-movie {
+  height: 100%;
+}
+
+#card-movie,
+#card-movie-full {
+  max-width: 100%;
+  height: 450px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+
+}
+
+
+#card-movie-full {
+  margin-top: 20px;
+  height: 300px;
+}
+
+#button-watch {
+  border-radius: 10px 0px;
+}

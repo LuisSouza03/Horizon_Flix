@@ -14,7 +14,11 @@ export class TmdbService {
     private httpClient: HttpClient
   ) { }
 
-  public getTrending(): Observable<ITmdbResponse> {
+  public getTrendingMovies(): Observable<ITmdbResponse> {
     return this.httpClient.get<ITmdbResponse>(`${environment.API_URL}/trending/all/day?language=pt-BR&api_key=${environment.API_KEY}`);
+  }
+
+  public getPopularMovies(): Observable<ITmdbResponse> {
+    return this.httpClient.get<ITmdbResponse>(`${environment.API_URL}/movie/popular?language=pt-BR&api_key=${environment.API_KEY}`);
   }
 }

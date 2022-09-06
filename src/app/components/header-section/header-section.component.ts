@@ -1,4 +1,4 @@
-import { ITmdbMovieDataTrending, ITmdbResponse } from './../../models/tmdb.model';
+import { ITmdbMovieData, ITmdbResponse } from './../../models/tmdb.model';
 import { TmdbService } from './../../services/tmdb.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,14 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderSectionComponent implements OnInit {
   imgBackground!: string;
-  movieTrending!: ITmdbMovieDataTrending;
+  movieTrending!: ITmdbMovieData;
 
   constructor(
     private tmdbService: TmdbService
   ) {
-    this.tmdbService.getTrending().subscribe((data: ITmdbResponse) => {
+    this.tmdbService.getTrendingMovies().subscribe((data: ITmdbResponse) => {
 
-      const moviesData: Array<ITmdbMovieDataTrending> = data.results;
+      const moviesData: Array<ITmdbMovieData> = data.results;
       this.getOneRandomMovie(moviesData);
     })
   }
@@ -26,9 +26,9 @@ export class HeaderSectionComponent implements OnInit {
 
   }
 
-  getOneRandomMovie(moviesData: Array<ITmdbMovieDataTrending>): void {
-    this.movieTrending = moviesData[Math.floor(Math.random() * 19)] as ITmdbMovieDataTrending;
-    debugger
+  getOneRandomMovie(moviesData: Array<ITmdbMovieData>): void {
+    this.movieTrending = moviesData[Math.floor(Math.random() * 19)] as ITmdbMovieData;
+
     this.imgBackground = 'https://image.tmdb.org/t/p/original/' + this.movieTrending.backdrop_path;
   }
 
