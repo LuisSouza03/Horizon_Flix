@@ -1,14 +1,14 @@
-import { ITmdbMovieData, ITmdbResponse } from './../../models/tmdb.model';
-import { TmdbService } from './../../services/tmdb.service';
+import { ITmdbMovieData, ITmdbResponse } from '../../models/tmdb.model';
+import { TmdbService } from '../../services/tmdb.service';
 import { Component, OnInit } from '@angular/core';
 
 
 @Component({
-  selector: 'app-header-section',
-  templateUrl: './header-section.component.html',
-  styleUrls: ['./header-section.component.scss']
+  selector: 'app-main-content-section',
+  templateUrl: './main-content-section.component.html',
+  styleUrls: ['./main-content-section.component.scss']
 })
-export class HeaderSectionComponent implements OnInit {
+export class MainContentSectionComponent implements OnInit {
   imgBackground!: string;
   movieTrending!: ITmdbMovieData;
 

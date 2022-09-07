@@ -6,23 +6,28 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatIconModule } from '@angular/material/icon';
-import { HeaderSectionComponent } from './components/header-section/header-section.component';
+import { MainContentSectionComponent } from './components/main-content-section/main-content-section.component';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
+import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { InfoMovieModalComponent } from './shared/components/info-movie-modal/info-movie-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HeaderSectionComponent,
-    PopularMoviesComponent
+    MainContentSectionComponent,
+    PopularMoviesComponent,
+    InfoMovieModalComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MdbCheckboxModule,
+    MdbModalModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

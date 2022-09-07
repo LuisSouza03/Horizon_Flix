@@ -18,28 +18,9 @@
             Assista Agora
           </button>
 
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="col-md-6">
-
-      <div class="card text-white mb-3" [style.backgroundImage]="'url('+ popularMovies[3].backdrop_path +')'"
-        id="card-movie">
-
-        <div class="card-body">
-
-          <h5 class="text-start card-title">{{ popularMovies[3].title || popularMovies[3].original_name }}</h5>
-
-          <p class="text-start card-text">
-            {{ popularMovies[3].overview }}
-          </p>
-
-          <button type="button" class="btn" id="button-watch">
-            <i class="fa fa-play" aria-hidden="true"></i>
-            Assista Agora
+          <!-- Button trigger modal -->
+          <button type="button" id="button-watch" class="btn" (click)="openModal(popularMovies[4])">
+            More Informations
           </button>
 
         </div>
@@ -48,25 +29,49 @@
 
     </div>
 
-    <div class="col-12">
-      <div class="card text-white mb-3" [style.backgroundImage]="'url('+ popularMovies[2].backdrop_path +')'"
-        id="card-movie-full">
-        <div class="card-body">
+    <div class=" col-md-6">
 
-          <h5 class="text-start card-title">{{ popularMovies[2].title || popularMovies[2].original_name }}</h5>
+              <div class="card text-white mb-3" [style.backgroundImage]="'url('+ popularMovies[3].backdrop_path +')'"
+                id="card-movie">
 
-          <p class="text-start card-text">
-            {{ popularMovies[2].overview }}
-          </p>
+                <div class="card-body">
 
-          <button type="button" class="btn" id="button-watch">
-            <i class="fa fa-play" aria-hidden="true"></i>
-            Assista Agora
-          </button>
+                  <h5 class="text-start card-title">{{ popularMovies[3].title || popularMovies[3].original_name }}</h5>
+
+                  <p class="text-start card-text">
+                    {{ popularMovies[3].overview }}
+                  </p>
+
+                  <button type="button" class="btn" id="button-watch">
+                    <i class="fa fa-play" aria-hidden="true"></i>
+                    Assista Agora
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="col-12">
+              <div class="card text-white mb-3" [style.backgroundImage]="'url('+ popularMovies[2].backdrop_path +')'"
+                id="card-movie-full">
+                <div class="card-body">
+
+                  <h5 class="text-start card-title">{{ popularMovies[2].title || popularMovies[2].original_name }}</h5>
+
+                  <p class="text-start card-text">
+                    {{ popularMovies[2].overview }}
+                  </p>
+
+                  <button type="button" class="btn" id="button-watch">
+                    <i class="fa fa-play" aria-hidden="true"></i>
+                    Assista Agora
+                  </button>
+                </div>
+              </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
 
 
 </section>
