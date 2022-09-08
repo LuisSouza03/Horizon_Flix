@@ -4,7 +4,7 @@ header.masthead {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: calc(100vh - 72.2px);
+  height: 80vh;
 }
 
 #imdb-rating {
@@ -12,4 +12,14 @@ header.masthead {
   img {
     width: 3.75rem;
   }
+}
+
+.title_movie {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 65px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000;
 }

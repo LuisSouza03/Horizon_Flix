@@ -8,7 +8,7 @@ export interface ITmdbResponse {
 export interface ITmdbMovieData {
   poster_path?: string;
   adult?: boolean;
-  overview?: string;
+  overview: string;
   genre_ids?: string;
   id?: number;
   original_title?: string;

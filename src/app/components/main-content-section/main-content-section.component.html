@@ -4,12 +4,12 @@
     <div class="row gx-2 gx-lg-2 h-100 justify-content-start text-start">
 
       <div class="col-lg-9">
-        <h1 class="text-white font-weight-bold">{{ movieTrending.title || movieTrending.original_name }}</h1>
+        <h1 class="text-white title_movie">{{ movieTrending.title || movieTrending.original_name }}</h1>
       </div>
 
       <div class="col-lg-4">
-        <p class="text-white mb-3">{{ movieTrending.overview }}</p>
-        <p class="text-white mb-5" id="imdb-rating">
+        <p class="text-white">{{ movieTrending.overview.substr(0, 250) }}...</p>
+        <p class="text-white" id="imdb-rating">
           <img src="../../../assets/logo/imdb.png" alt="ImdB">
           {{ movieTrending.vote_average }}
         </p>
