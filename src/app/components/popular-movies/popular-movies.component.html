@@ -1,27 +1,32 @@
 <section class="container">
-  <h2 class="text-white">Filmes em Alta</h2>
+  <h2 class="text-white">Mais Assistidos</h2>
 
-  <div class="row justify-content-start text-end" id="first-movie">
+  <div class="row justify-content-end text-end" id="first-movie">
     <div class="col-md-6">
 
       <div class="card text-white mb-3" [style.backgroundImage]="'url('+ popularMovies[4].backdrop_path +')'"
         id="card-movie">
 
-        <div class="card-body">
-          <h5 class="text-start card-title">{{ popularMovies[4].title || popularMovies[4].original_name }}</h5>
-          <p class="text-start card-text">
-            {{ popularMovies[4].overview }}
-          </p>
+        <div class="background">
 
-          <button type="button" class="btn" id="button-watch">
-            <i class="fa fa-play" aria-hidden="true"></i>
-            Assista Agora
-          </button>
+          <div class="card-body">
+            <h5 class="text-start card-title title_movie">{{ popularMovies[4].title || popularMovies[4].original_name }}
+            </h5>
+            <p class="text-start card-text">
+              {{ popularMovies[4].overview.substr(0,150) }} ...
+            </p>
 
-          <!-- Button trigger modal -->
-          <button type="button" id="button-watch" class="btn" (click)="openModal(popularMovies[4])">
-            More Informations
-          </button>
+            <button type="button" class="btn" id="button-watch">
+              <i class="fa fa-play" aria-hidden="true"></i>
+              Assista Agora
+            </button>
+
+            <!-- Button trigger modal -->
+            <button type="button" id="button-watch" class="btn" (click)="openModal(popularMovies[4])">
+              Mais informações
+            </button>
+
+          </div>
 
         </div>
 
@@ -31,47 +36,39 @@
 
     <div class=" col-md-6">
 
-              <div class="card text-white mb-3" [style.backgroundImage]="'url('+ popularMovies[3].backdrop_path +')'"
-                id="card-movie">
+      <div class="card text-white mb-3" [style.backgroundImage]="'url('+ popularMovies[3].backdrop_path +')'"
+        id="card-movie">
 
-                <div class="card-body">
+        <div class="background">
 
-                  <h5 class="text-start card-title">{{ popularMovies[3].title || popularMovies[3].original_name }}</h5>
+          <div class="card-body">
 
-                  <p class="text-start card-text">
-                    {{ popularMovies[3].overview }}
-                  </p>
+            <h5 class="text-start card-title title_movie">{{ popularMovies[3].title || popularMovies[3].original_name }}
+            </h5>
 
-                  <button type="button" class="btn" id="button-watch">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    Assista Agora
-                  </button>
+            <p class="text-start card-text">
+              {{ popularMovies[3].overview.substr(0,150) }} ...
+            </p>
 
-                </div>
+            <button type="button" class="btn" id="button-watch">
+              <i class="fa fa-play" aria-hidden="true"></i>
+              Assista Agora
+            </button>
 
-              </div>
+            <!-- Button trigger modal -->
+            <button type="button" id="button-watch" class="btn" (click)="openModal(popularMovies[4])">
+              Mais informações
+            </button>
 
-            </div>
+          </div>
 
-            <div class="col-12">
-              <div class="card text-white mb-3" [style.backgroundImage]="'url('+ popularMovies[2].backdrop_path +')'"
-                id="card-movie-full">
-                <div class="card-body">
-
-                  <h5 class="text-start card-title">{{ popularMovies[2].title || popularMovies[2].original_name }}</h5>
-
-                  <p class="text-start card-text">
-                    {{ popularMovies[2].overview }}
-                  </p>
-
-                  <button type="button" class="btn" id="button-watch">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    Assista Agora
-                  </button>
-                </div>
-              </div>
-            </div>
         </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 
 </section>
