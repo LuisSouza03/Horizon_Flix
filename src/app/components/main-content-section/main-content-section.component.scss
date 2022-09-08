@@ -14,12 +14,17 @@ header.masthead {
   }
 }
 
+.test-background {
+  height: 88vh;
+  margin-top: -25vh;
+  background: radial-gradient(44.22% 57.61% at 56.6% 39.68%, rgba(21, 26, 32, 0) 0%, #151A20 100%) !important;
+}
+
 .title_movie {
+  margin-top: calc(80vh - 58vh);
+  margin-bottom: -100px;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 800;
   font-size: 48px;
-  line-height: 65px;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #000;
 }
