@@ -5,33 +5,46 @@
 
       <div class="row gx-2 gx-lg-2 h-100 justify-content-start text-start">
 
-        <div class="col-lg-9">
-          <h1 class="text-white title_movie">{{ movieTrending.title || movieTrending.original_name }}</h1>
+        <div class="col-lg-9" id="title_movie">
+          <h1 class="text-white">{{ movieTrending.title || movieTrending.original_name }}</h1>
         </div>
 
-        <div class="col-lg-4">
-          <p class="text-white">{{ movieTrending.overview.substr(0, 250) }}...</p>
+        <div class="col-lg-5">
+
+          <!-- Movie Description -->
+          <p [ngClass]="{'limitTextHeight': isReadMore}" class="text-white">
+            {{ movieTrending.overview }}
+          </p>
+
+          <!-- Button Read More -->
+          <button type="button" id="btn-read-more" class="btn-sm btn btn-outline-warning" (click)="showText()">
+            {{ isReadMore ? 'Leia Mais': 'Leia Menos' }}
+          </button>
+
+          <!-- IMDB Note -->
           <p class="text-white" id="imdb-rating">
             <img src="../../../assets/logo/imdb.png" alt="ImdB">
-            {{ movieTrending.vote_average }}
+            {{ movieTrending.vote_average?.toString()?.substr(0,3) }}
           </p>
+
+          <!-- 18 Indicative Classification -->
           <p *ngIf="movieTrending.adult == true">
             <img src="../../../assets/logo/classificacao-indicativa-18.png" alt="Classificação Indicativa 18 Anos">
           </p>
 
-          <button type="button" class="btn" id="button-watch">
+          <!-- Watch Now -->
+          <button type="button" class="btn btn-outline-warning" id="button-watch">
             <i class="fa fa-play" aria-hidden="true"></i>
             Assista Agora
           </button>
 
+          <!-- Button trigger modal -->
+          <button type="button" id="button-watch" class="btn btn-outline-warning" (click)="openModal(movieTrending)">
+            Mais informações
+          </button>
+
         </div>
-
       </div>
-
     </div>
-
-
   </div>
-
-
 </header>

@@ -10,28 +10,32 @@
         <div class="background">
 
           <div class="card-body">
-            <h5 class="text-start card-title title_movie">{{ popularMovies[4].title || popularMovies[4].original_name }}
+
+            <!-- Movie title -->
+            <h5 class="text-start card-title title_movie">
+              {{ popularMovies[4].title || popularMovies[4].original_name }}
             </h5>
+
+            <!-- Movie description -->
             <p class="text-start card-text">
               {{ popularMovies[4].overview.substr(0,150) }} ...
             </p>
 
-            <button type="button" class="btn" id="button-watch">
+            <!-- Button watch now -->
+            <button type="button" class="btn btn-outline-warning" id="button-watch">
               <i class="fa fa-play" aria-hidden="true"></i>
               Assista Agora
             </button>
 
             <!-- Button trigger modal -->
-            <button type="button" id="button-watch" class="btn" (click)="openModal(popularMovies[4])">
+            <button type="button" id="button-watch" class="btn btn-outline-warning"
+              (click)="openModal(popularMovies[4])">
               Mais informações
             </button>
 
           </div>
-
         </div>
-
       </div>
-
     </div>
 
     <div class=" col-md-6">
@@ -43,32 +47,32 @@
 
           <div class="card-body">
 
-            <h5 class="text-start card-title title_movie">{{ popularMovies[3].title || popularMovies[3].original_name }}
+            <!-- Movie title -->
+            <h5 class="text-start card-title title_movie">
+              {{ popularMovies[3].title || popularMovies[3].original_name }}
             </h5>
 
+            <!-- Movie description -->
             <p class="text-start card-text">
               {{ popularMovies[3].overview.substr(0,150) }} ...
             </p>
 
-            <button type="button" class="btn" id="button-watch">
+            <!-- Button watch now -->
+            <button type="button" class="btn btn-outline-warning" id="button-watch">
               <i class="fa fa-play" aria-hidden="true"></i>
               Assista Agora
             </button>
 
             <!-- Button trigger modal -->
-            <button type="button" id="button-watch" class="btn" (click)="openModal(popularMovies[4])">
+            <button type="button" id="button-watch" class="btn btn-outline-warning"
+              (click)="openModal(popularMovies[4])">
               Mais informações
             </button>
 
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 
 </section>
