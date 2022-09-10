@@ -3,6 +3,7 @@ import { TmdbService } from '../../services/tmdb.service';
 import { Component, OnInit } from '@angular/core';
 import { InfoMovieModalComponent } from 'src/app/shared/components/info-movie-modal/info-movie-modal.component';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 
 @Component({
@@ -20,7 +21,7 @@ export class MainContentSectionComponent implements OnInit {
 
   constructor(
     private tmdbService: TmdbService,
-    private modalService: MdbModalService
+    private modalService: NgbModal
   ) {
     this.tmdbService.getTrendingMovies().subscribe((data: ITmdbResponse) => {
 
@@ -41,10 +42,8 @@ export class MainContentSectionComponent implements OnInit {
   }
 
   openModal(movieSelect: any) {
-    this.modalRef = this.modalService.open(InfoMovieModalComponent, {
-      modalClass: 'modal-dialog',
-      data: movieSelect
-    })
+    const modalRef = this.modalService.open(InfoMovieModalComponent);
+    modalRef.componentInstance.movieSelect = movieSelect;
   }
 
   showText() {

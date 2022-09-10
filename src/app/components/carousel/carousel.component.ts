@@ -1,5 +1,5 @@
 import { TmdbService } from './../../services/tmdb.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ITmdbMovieData, ITmdbResponse } from 'src/app/models/tmdb.model';
 import Swiper from 'swiper';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
@@ -13,7 +13,7 @@ import { InfoMovieModalComponent } from 'src/app/shared/components/info-movie-mo
 })
 export class CarouselComponent implements OnInit {
 
-  popularMovies!: Array<ITmdbMovieData>;
+  @Input() popularMovies!: Array<ITmdbMovieData>;
   modalRef: MdbModalRef<InfoMovieModalComponent> | null = null;
 
   constructor(
