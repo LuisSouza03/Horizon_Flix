@@ -16,15 +16,11 @@ export class CarouselMoviesComponent implements OnInit {
 
   constructor(
     private tmdbService: TmdbService,
-  ) {
-
-  }
+  ) { }
 
   ngOnInit(): void {
-
     this.getPopularMovies();
     this.getOriginalsMovies();
-
   }
 
   getPopularMovies() {

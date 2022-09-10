@@ -17,6 +17,7 @@ import { ContentCarouselInfoComponent } from './shared/components/content-carous
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselMoviesComponent } from './components/carousel-movies/carousel-movies.component';
+import { SafePipe } from './shared/pipe/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CarouselMoviesComponent } from './components/carousel-movies/carousel-m
     InfoMovieModalComponent,
     CarouselComponent,
     ContentCarouselInfoComponent,
-    CarouselMoviesComponent
+    CarouselMoviesComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

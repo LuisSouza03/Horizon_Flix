@@ -24,15 +24,15 @@ export interface ITmdbMovieData {
 
 export interface ITmdbResponseTrailerMovie {
   id: number;
-  results?: Array<ITmdbTrailerMovieData>;
+  results: Array<ITmdbMovieTrailerData>;
 }
 
-export interface ITmdbTrailerMovieData {
+export interface ITmdbMovieTrailerData {
   iso_639_1?: string
   iso_3166_1?: string
   name?: string
   key?: string
-  site?: string
+  site: string
   size?: number
   type?: string
   official?: boolean
