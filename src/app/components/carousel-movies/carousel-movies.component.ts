@@ -10,9 +10,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CarouselMoviesComponent implements OnInit {
 
-  titleSection = ['Em Alta', 'Originais HorizonFlix']
+  titleSection = ['Em Alta', 'Originais HorizonFlix', 'Terror']
   popularMovies!: Array<ITmdbMovieData>;
   originalsMovies!: Array<ITmdbMovieData>;
+  horrorMovies!: Array<ITmdbMovieData>;
 
   constructor(
     private tmdbService: TmdbService,
@@ -21,6 +22,7 @@ export class CarouselMoviesComponent implements OnInit {
   ngOnInit(): void {
     this.getPopularMovies();
     this.getOriginalsMovies();
+    this.getHorrorMovies();
   }
 
   getPopularMovies() {
@@ -43,6 +45,18 @@ export class CarouselMoviesComponent implements OnInit {
 
       for (let i in this.originalsMovies) {
         this.originalsMovies[i].poster_path = `https://image.tmdb.org/t/p/original/${this.originalsMovies[i].poster_path}`;
+      }
+    })
+  }
+
+  getHorrorMovies() {
+    this.tmdbService.getMoviesForCategory('27').subscribe((data: ITmdbResponse) => {
+      const horrorMoviesData: Array<ITmdbMovieData> = data.results;
+
+      this.horrorMovies = horrorMoviesData;
+
+      for (let i in this.horrorMovies) {
+        this.horrorMovies[i].poster_path = `https://image.tmdb.org/t/p/original/${this.horrorMovies[i].poster_path}`;
       }
     })
   }

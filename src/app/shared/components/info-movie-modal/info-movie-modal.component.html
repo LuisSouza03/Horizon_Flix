@@ -1,6 +1,25 @@
-<section>
-  <p>{{ movieSelect.overview }}</p>
+<section [style.backgroundImage]="'url('+ imgBackground +')'" class="row justify-content-center">
 
-  <iframe width="500" height="300" [src]='movieTrailerLink | safe' frameborder="0" allowfullscreen
-    allow='autoplay'></iframe>
+  <div class="background">
+
+    <div class="row container align-items-center">
+      <h2 class="container text-white">{{movieSelect.title || movieSelect.original_name}}</h2>
+
+    </div>
+
+
+    <div class="col">
+      <iframe width="500" height="280" [src]='movieTrailerLink | safe' frameborder="0" allowfullscreen="true"
+        allow='autoplay' style="border:none;"></iframe>
+    </div>
+
+
+    <div class="row align-items-end">
+      <div class="col">
+        <p class="text-white">{{ movieSelect.overview }}</p>
+      </div>
+    </div>
+  </div>
+
+
 </section>

@@ -14,6 +14,7 @@ export class InfoMovieModalComponent implements OnInit {
 
   @Input() movieSelect!: Array<ITmdbMovieData> | any;
   movieTrailerLink!: string;
+  imgBackground!: string;
 
   constructor(
     public modal: NgbActiveModal,
@@ -22,17 +23,20 @@ export class InfoMovieModalComponent implements OnInit {
 
 
   async ngOnInit(): Promise<void> {
-    console.log(this.movieSelect);
+    this.imgBackground = 'https://image.tmdb.org/t/p/original/' + this.movieSelect.backdrop_path;
     await this.getMovieTrailer()
     debugger
   }
 
   async getMovieTrailer() {
     this.tmdbService.getMovieTrailer(this.movieSelect.id).subscribe((data: ITmdbResponseTrailerMovie) => {
-      const originalsMovies: Array<ITmdbMovieTrailerData> = data.results;
 
-      if (originalsMovies[0].site === 'YouTube') {
-        this.movieTrailerLink = `https://www.youtube.com/embed/${originalsMovies[0].key}?autoplay=1`
+      const originalsMovies: Array<ITmdbMovieTrailerData> = data.results;
+      const youtubeVideos = originalsMovies.filter((siteSearch: any) => siteSearch.site === 'YouTube');
+      if (youtubeVideos) {
+
+        const trailerMovie = youtubeVideos.find((x: any) => x.type === 'Trailer');
+        this.movieTrailerLink = `https://www.youtube.com/embed/${trailerMovie?.key}?autoplay=1`
       }
     })
   }

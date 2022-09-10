@@ -26,6 +26,11 @@ export class TmdbService {
     return this.httpClient.get<ITmdbResponse>(`${environment.API_URL}/movie/top_rated?language=pt-BR&api_key=${environment.API_KEY}`);
   }
 
+  public getMoviesForCategory(idCategory: string) {
+    return this.httpClient.get<ITmdbResponse>(`${environment.API_URL}/discover/movie?language=pt-BR&api_key=${environment.API_KEY}&with_genres=${idCategory}`)
+  }
+
+
   public getMovieTrailer(movieId: string): Observable<ITmdbResponseTrailerMovie> {
     return this.httpClient.get<ITmdbResponseTrailerMovie>(`${environment.API_URL}/movie/${movieId}/videos?language=en-US&api_key=${environment.API_KEY}`);
   }
