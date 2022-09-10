@@ -12,6 +12,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { InfoMovieModalComponent } from './shared/components/info-movie-modal/info-movie-modal.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { ContentCarouselInfoComponent } from './components/content-carousel-info/content-carousel-info.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { InfoMovieModalComponent } from './shared/components/info-movie-modal/in
     NavbarComponent,
     MainContentSectionComponent,
     PopularMoviesComponent,
-    InfoMovieModalComponent
+    InfoMovieModalComponent,
+    CarouselComponent,
+    ContentCarouselInfoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+<div class="container-fluid">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div (click)="openModal(item)" *ngFor="let item of popularMovies" class="swiper-slide">
+        <img [src]="item.poster_path" alt="">
+      </div>
+    </div>
+  </div>
+</div>

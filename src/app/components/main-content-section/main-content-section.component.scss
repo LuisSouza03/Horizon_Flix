@@ -23,6 +23,10 @@ header.masthead {
 #title_movie {
   margin-top: calc(80vh - 58vh);
   margin-bottom: -6.25rem;
+
+  h1 {
+    font-size: 3.75rem;
+  }
 }
 
 .limitTextHeight {
