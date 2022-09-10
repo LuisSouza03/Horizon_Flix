@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ITmdbMovieData } from 'src/app/models/tmdb.model';
 
 @Component({
   selector: 'app-content-carousel-info',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentCarouselInfoComponent implements OnInit {
 
-  titleSection: string = 'Em Alta';
+  @Input() titleSection: string = 'Em Alta';
+  @Input() popularMovies!: Array<ITmdbMovieData>;
 
   constructor() { }
 

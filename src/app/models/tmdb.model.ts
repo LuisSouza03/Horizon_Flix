@@ -21,3 +21,21 @@ export interface ITmdbMovieData {
   video?: boolean;
   vote_average?: number;
 }
+
+export interface ITmdbResponseTrailerMovie {
+  id: number;
+  results?: Array<ITmdbTrailerMovieData>;
+}
+
+export interface ITmdbTrailerMovieData {
+  iso_639_1?: string
+  iso_3166_1?: string
+  name?: string
+  key?: string
+  site?: string
+  size?: number
+  type?: string
+  official?: boolean
+  published_at?: string
+  id?: string
+}

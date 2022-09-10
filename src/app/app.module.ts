@@ -12,10 +12,11 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
 import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { InfoMovieModalComponent } from './shared/components/info-movie-modal/info-movie-modal.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
-import { ContentCarouselInfoComponent } from './components/content-carousel-info/content-carousel-info.component';
+import { CarouselComponent } from './shared/components/carousel/carousel.component';
+import { ContentCarouselInfoComponent } from './shared/components/content-carousel-info/content-carousel-info.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselMoviesComponent } from './components/carousel-movies/carousel-movies.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PopularMoviesComponent,
     InfoMovieModalComponent,
     CarouselComponent,
-    ContentCarouselInfoComponent
+    ContentCarouselInfoComponent,
+    CarouselMoviesComponent
   ],
   imports: [
     BrowserModule,

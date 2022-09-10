@@ -27,6 +27,7 @@ export class MainContentSectionComponent implements OnInit {
     this.tmdbService.getTrendingMovies().subscribe((data: ITmdbResponse) => {
 
       const moviesData: Array<ITmdbMovieData> = data.results;
+      debugger
       this.getOneRandomMovie(moviesData);
     })
   }
