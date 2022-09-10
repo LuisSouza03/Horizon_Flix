@@ -8,7 +8,7 @@
     </div>
 
 
-    <div class="col">
+    <div class="col" *ngIf="haveAMovieTrailer === true">
       <iframe width="500" height="280" [src]='movieTrailerLink | safe' frameborder="0" allowfullscreen="true"
         allow='autoplay' style="border:none;"></iframe>
     </div>
