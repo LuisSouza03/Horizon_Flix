@@ -3,8 +3,7 @@ import { TmdbService } from './../../services/tmdb.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 import { InfoMovieModalComponent } from '../../shared/components/info-movie-modal/info-movie-modal.component';
-
-import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 
 @Component({
@@ -15,11 +14,10 @@ import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 export class PopularMoviesComponent implements OnInit {
 
   popularMovies!: Array<ITmdbMovieData>;
-  modalRef: MdbModalRef<InfoMovieModalComponent> | null = null;
 
   constructor(
     private tmdbService: TmdbService,
-    private modalService: MdbModalService
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -30,10 +28,8 @@ export class PopularMoviesComponent implements OnInit {
   }
 
   openModal(movieSelect: any) {
-    this.modalRef = this.modalService.open(InfoMovieModalComponent, {
-      modalClass: 'modal-dialog',
-      data: movieSelect
-    })
+    const modalRef = this.modalService.open(InfoMovieModalComponent);
+    modalRef.componentInstance.movieSelect = movieSelect;
   }
 
   private _getSomePopularMovies(data: Array<ITmdbMovieData>) {
@@ -41,7 +37,6 @@ export class PopularMoviesComponent implements OnInit {
     for (let i in this.popularMovies) {
       this.popularMovies[i].backdrop_path = `https://image.tmdb.org/t/p/original/${this.popularMovies[i].backdrop_path}`;
     }
-    debugger
   }
 
 }

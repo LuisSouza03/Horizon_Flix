@@ -13,11 +13,13 @@ export class InfoMovieModalComponent implements OnInit {
   @Input() movieSelect!: Array<ITmdbMovieData> | any;
 
   constructor(
-    public activeModal: NgbActiveModal
+    public modal: NgbActiveModal
   ) { }
 
 
   ngOnInit(): void {
+    console.log(this.movieSelect);
+    debugger
   }
 
 }

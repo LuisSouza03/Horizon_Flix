@@ -2,9 +2,9 @@ import { TmdbService } from './../../services/tmdb.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { ITmdbMovieData, ITmdbResponse } from 'src/app/models/tmdb.model';
 import Swiper from 'swiper';
-import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { InfoMovieModalComponent } from 'src/app/shared/components/info-movie-modal/info-movie-modal.component';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-carousel',
@@ -14,11 +14,10 @@ import { InfoMovieModalComponent } from 'src/app/shared/components/info-movie-mo
 export class CarouselComponent implements OnInit {
 
   @Input() popularMovies!: Array<ITmdbMovieData>;
-  modalRef: MdbModalRef<InfoMovieModalComponent> | null = null;
 
   constructor(
     private tmdbService: TmdbService,
-    private modalService: MdbModalService
+    private modalService: NgbModal
   ) {
     this.tmdbService.getPopularMovies().subscribe((data: ITmdbResponse) => {
       const popularMovies: Array<ITmdbMovieData> = data.results;
@@ -66,10 +65,8 @@ export class CarouselComponent implements OnInit {
   }
 
   openModal(movieSelect: any) {
-    this.modalRef = this.modalService.open(InfoMovieModalComponent, {
-      modalClass: 'modal-dialog',
-      data: movieSelect
-    })
+    const modalRef = this.modalService.open(InfoMovieModalComponent);
+    modalRef.componentInstance.movieSelect = movieSelect;
   }
 
 

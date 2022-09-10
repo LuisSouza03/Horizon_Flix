@@ -2,7 +2,6 @@ import { ITmdbMovieData, ITmdbResponse } from '../../models/tmdb.model';
 import { TmdbService } from '../../services/tmdb.service';
 import { Component, OnInit } from '@angular/core';
 import { InfoMovieModalComponent } from 'src/app/shared/components/info-movie-modal/info-movie-modal.component';
-import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 
@@ -14,8 +13,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 export class MainContentSectionComponent implements OnInit {
   imgBackground!: string;
   movieTrending!: ITmdbMovieData;
-
-  modalRef: MdbModalRef<InfoMovieModalComponent> | null = null;
 
   isReadMore = true
 
@@ -42,6 +39,7 @@ export class MainContentSectionComponent implements OnInit {
   }
 
   openModal(movieSelect: any) {
+    debugger
     const modalRef = this.modalService.open(InfoMovieModalComponent);
     modalRef.componentInstance.movieSelect = movieSelect;
   }
