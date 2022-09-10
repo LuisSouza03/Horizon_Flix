@@ -25,9 +25,14 @@
           <p class="text-white" id="imdb-rating">
             <img src="../../../assets/logo/imdb.png" alt="ImdB">
             {{ movieTrending.vote_average?.toString()?.substr(0,3) }}
-          </p>
 
-          <!-- 18 Indicative Classification -->
+            <ngb-rating [(rate)]="currentRate">
+              <ng-template let-fill="fill" let-index="index">
+                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+              </ng-template>
+            </ngb-rating>
+
+            <!-- 18 Indicative Classification -->
           <p *ngIf="movieTrending.adult == true">
             <img src="../../../assets/logo/classificacao-indicativa-18.png" alt="Classificação Indicativa 18 Anos">
           </p>

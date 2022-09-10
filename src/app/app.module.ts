@@ -15,6 +15,7 @@ import { InfoMovieModalComponent } from './shared/components/info-movie-modal/in
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ContentCarouselInfoComponent } from './components/content-carousel-info/content-carousel-info.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ContentCarouselInfoComponent } from './components/content-carousel-info
     MatIconModule,
     HttpClientModule,
     MdbCheckboxModule,
-    MdbModalModule
+    MdbModalModule,
+    NgbModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
