@@ -33,7 +33,7 @@ export class PopularMoviesComponent implements OnInit {
   }
 
   private _getSomePopularMovies(data: Array<ITmdbMovieData>) {
-    this.popularMovies = data.slice(5, 10)
+    this.popularMovies = data.slice(5, 15)
     for (let i in this.popularMovies) {
       this.popularMovies[i].backdrop_path = `https://image.tmdb.org/t/p/original/${this.popularMovies[i].backdrop_path}`;
     }

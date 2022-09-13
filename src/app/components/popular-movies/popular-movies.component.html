@@ -4,7 +4,7 @@
   <div class="row justify-content-end text-end" id="first-movie">
     <div class="col-md-6">
 
-      <div class="card text-white mb-3" [style.backgroundImage]="'url('+ popularMovies[4].backdrop_path +')'"
+      <div class="card text-white mb-3" [style.backgroundImage]="'url('+ popularMovies[0].backdrop_path +')'"
         id="card-movie">
 
         <div class="background">
@@ -13,12 +13,12 @@
 
             <!-- Movie title -->
             <h5 class="text-start card-title title_movie">
-              {{ popularMovies[4].title || popularMovies[4].original_name }}
+              {{ popularMovies[0].title || popularMovies[0].original_name }}
             </h5>
 
             <!-- Movie description -->
             <p class="text-start card-text">
-              {{ popularMovies[4].overview.substr(0,150) }} ...
+              {{ popularMovies[0].overview.substr(0,150) }} ...
             </p>
 
             <!-- Button watch now -->
@@ -29,7 +29,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" id="button-watch" class="btn btn-outline-warning"
-              (click)="openModal(popularMovies[4])">
+              (click)="openModal(popularMovies[0])">
               Mais informações
             </button>
 
@@ -38,9 +38,9 @@
       </div>
     </div>
 
-    <div class=" col-md-6">
+    <div class="col-md-6">
 
-      <div class="card text-white mb-3" [style.backgroundImage]="'url('+ popularMovies[3].backdrop_path +')'"
+      <div class="card text-white mb-3" [style.backgroundImage]="'url('+ popularMovies[6].backdrop_path +')'"
         id="card-movie">
 
         <div class="background">
@@ -49,12 +49,12 @@
 
             <!-- Movie title -->
             <h5 class="text-start card-title title_movie">
-              {{ popularMovies[3].title || popularMovies[3].original_name }}
+              {{ popularMovies[6].title || popularMovies[6].original_name }}
             </h5>
 
             <!-- Movie description -->
             <p class="text-start card-text">
-              {{ popularMovies[3].overview.substr(0,150) }} ...
+              {{ popularMovies[6].overview.substr(0,150) }} ...
             </p>
 
             <!-- Button watch now -->
@@ -65,7 +65,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" id="button-watch" class="btn btn-outline-warning"
-              (click)="openModal(popularMovies[4])">
+              (click)="openModal(popularMovies[6])">
               Mais informações
             </button>
 
