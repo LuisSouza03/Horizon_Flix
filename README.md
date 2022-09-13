@@ -1,27 +1,97 @@
-# HorizonFlix
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+<h1 align="center">
+  💻<br> 
+  
+  ![Logo](/src/assets/logo/logo_horizon_flix.svg)
+</h1>
 
-## Development server
+Um site de streaming, contendo vários filmes e séries. Site criado para portifólio, não tem uso externo e não está publicado em nenhum tipo de host.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+<hr>
+<br>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🎯 Status do projeto
 
-## Build
+🚧🏗️ Em Construção 🚧
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<hr>
+<br>
 
-## Running unit tests
+## 💼 Stack utilizada
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para o desenvolvimento deste site utilizei as seguintes tecnologias:
 
-## Running end-to-end tests
+- Angular;
+- Typescript;
+- HTML;
+- SCSS;
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<hr>
+<br>
 
-## Further help
+## 💻 Rodando localmente
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Clone o projeto
+
+```bash
+  git clone https://github.com/LuisSouza03/Horizon_Flix.git
+```
+
+Entre no diretório do projeto
+
+```bash
+  cd horizon_flix
+```
+
+Instale as dependências
+
+```bash
+  npm install
+```
+
+Inicie a aplicação
+
+```bash
+  ng s --o
+```
+
+<hr>
+<br>
+
+## 🚀 Screenshots
+
+![App Screenshot5](src/assets/screenshots/full-site.png)
+![App Screenshot4](src/assets/screenshots/info-movie.png)
+
+<hr>
+<br>
+
+## ❗ Variáveis de Ambiente
+
+Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no environment.ts
+
+`API_KEY`
+
+Que pode ser gerada na API do [TMDB](https://developers.themoviedb.org/3/getting-started/introduction)
+
+<hr>
+<br>
+
+## 🧑🏽‍💻 Autor
+
+- [@LuisSouza03](https://www.github.com/LuisSouza03)
+
+<hr>
+<br>
+
+## 📝 Licença
+
+Esse projeto está sob licença MIT. Veja o arquivo [LICENÇA](LICENSE) para mais detalhes. [MIT](https://choosealicense.com/licenses/mit/)
+
+<br>
+<br>
+
+Copyright © 2022 - LuisSouzaz03
+
+A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia deste arquivo, com restrição de publicar como seu repositório. Porém, sem restrição nos direitos de usar, copiar, modificar e mesclar.
